@@ -1,0 +1,32 @@
+{
+  "name": "recipes",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mizhanh/Recipes.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mizhanh/Recipes/issues"
+  },
+  "homepage": "https://github.com/mizhanh/Recipes#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "express-handlebars": "^3.0.0",
+    "handlebars-helper-css": "^0.1.0",
+    "method-override": "^2.3.10",
+    "mysql2": "^1.5.2",
+    "sequelize": "^4.33.2"
+  }
+}
