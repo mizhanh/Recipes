@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>Sweet Basil Recipes</title>
+    <!-- Form CSS files -->
+    <link type='text/css' href='css/basic.css' rel='stylesheet' media='screen' />
+    <!-- jQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+
+    <!--Parsley.js -->
+    <script src="parsley.min.js"></script>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!-- My stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+  
+     <!-- Google fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600" rel="stylesheet">
+    
+  
+    <script src="js/basic.js"></script>
+
+<style>
+
+     
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+
+      }
+    </style>
+  </head>
+  <body>
+    
+    <div class="container" style=" background-color: #ffffff;padding:20px;">
+      <div id="basic-modal">
+     <!--<button name="basic" type="submit" class="btn btn-default basic" id="add-signup-btn" style="background-color:#006bc8;color:#ffffff;float:right;margin-top:20px;">Signup</button>
+</div>
+<div id="basic1-modal">
+     <button name="basic1" type="submit" class="btn btn-success basic1" id="add-login-btn" style="margin-top:20px;background-color:#7CB900;float:right;margin-right:20px;">Login</button>-->
+</div>
+<!--logo-->
+<img src="img/logo.png">
+  
+
+<!--navbar-->
+<nav class="navbar navbar-default" >
+  <div class="container-fluid" >
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">Sweet Basil Recipes</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="browse-recipes.html">Browse Top Recipes</a></li>
+        <li><a href="submit-recipe.html">Search for a recipe</a></li>
+        <!--<li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Action</a></li>
+            <li><a href="#">Another action</a></li>
+            <li><a href="#">Something else here</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">Separated link</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">One more separated link</a></li>
+          </ul>
+        </li>-->
+      </ul>
+      <form class="navbar-form navbar-right">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Search">
+        </div>
+        <button type="submit" class="btn btn-success">Submit</button>
+      </form>
+     
+        </li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+ 
+
+      <div class="row" style="margin-top:50px;">
+ <div class="col-sm-12" align="center">
+        </div>
+        <div class="col-sm-8">
+
+          <!-- Add Ingredients -->
+          <div class="panel panel-primary" align="left" style="margin-top:20px;">
+            <div class="panel-heading" style="border-color:#c19c62;">
+              <h3 class="panel-title"><strong style="color:black">Submit Your Own Recipe</strong></h3>
+            </div>
+            <div class="panel-body">
+              <!-- Form -->
+              <form>
+                <div class="form-group">
+                  <label for="first-ingredient">Main Recipe Ingredient</label>
+                  <input type="text" class="form-control" id="recipe-ingredients">
+                </div>
+                <div class="form-group">
+                  <label for="steps">Secondary Recipe Ingredient</label>
+                  <input type="text" class="form-control" id="recipe-steps">
+                </div>
+                
+                <button type="submit" class="btn btn-success" id="add-submit-btn" style="background-color:#7CB900">Submit</button>
+                <button type="submit" class="btn btn-danger" id="add-reset-btn">Reset</button>
+              </form>
+            </div>
+          </div>
+ 
+        </div>
+
+
+<div class="col-sm-4">
+<img src="img/prawns.png" align="right" style="margin-top:20px;">
+
+</div>
+
+
+
+    </div>
+
+    <div class="row" style="margin-left:30px;">
+     <div class="col-lg-2" align="right" style="margin-top:20px;" width="30%">
+   
+     </div>
+
+    </div>
+  
+
+    <!-- Script -->
+
+
+<script src="assets/app.js"></script>
+<!-- Load jQuery, SimpleModal and Basic JS files -->
+<script type='text/javascript' src='js/jquery.simplemodal.js'></script>
+<script type='text/javascript' src='js/basic.js'></script>
+<!-- Link to the documentation for this modal: http://www.ericmmartin.com/projects/simplemodal/  -->
+
+<footer class="footer"><div class="container"><p>&copy; Copyright, 2018. All rights reserved. | Hanh Briggs, Ian Goodnight, Ethan Wollenber, Patricia Smith</p></div></footer>
+  </body>
+</html>
