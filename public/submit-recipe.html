@@ -15,7 +15,8 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <!-- My stylesheet -->
     <link rel="stylesheet" href="css/style.css">
-      <link rel="stylesheet" href="css/style2.css">
+     <link rel="stylesheet" href="css/style2.css">
+
 
   
      <!-- Google fonts -->
@@ -25,7 +26,7 @@
   </head>
   <body>
     
-    <div class="container" style=" background-color: #ffffff;padding:20px;">
+    <div class="container" style="background-color: #ffffff;padding:20px;">
       <div id="basic-modal">
      <!--<button name="basic" type="submit" class="btn btn-default basic" id="add-signup-btn" style="background-color:#006bc8;color:#ffffff;float:right;margin-top:20px;">Signup</button>
 </div>
@@ -39,8 +40,8 @@
 <!--navbar-->
 
     <!-- Brand and toggle get grouped for better mobile display -->
-<nav class="navbar navbar-default" >
-  <div class="container-fluid" height="57px">
+<nav class="navbar navbar-default" style="max-height:52px;">
+  <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
@@ -55,40 +56,29 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li><a href="browse-recipes.html">Browse Top Recipes</a></li>
-        <li class="active"><a href="submit-recipe.html">Submit Your Own Recipe</a></li>
-        <!--<li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="#">Action</a></li>
-            <li><a href="#">Another action</a></li>
-            <li><a href="#">Something else here</a></li>
-            <li role="separator" class="divider"></li>
-            <li><a href="#">Separated link</a></li>
-            <li role="separator" class="divider"></li>
-            <li><a href="#">One more separated link</a></li>
-          </ul>
-        </li>-->
+        <li><a href="browse-recipes.html">Browse Recipes</a></li>
+        <li class="active"><a href="submit-recipe.html">Submit Your Recipes</a></li>
+      </ul>
+       <ul class="nav navbar-nav">
+        <li><a href="my-recipes.html">My Recipes</a></li>
+       
       </ul>
       <form class="navbar-form navbar-right">
         <div class="form-group">
-          <input type="text" class="form-control" placeholder="Search">
+          <input style="margin-top:-2px;" type="text" class="form-control" placeholder="Search">
         </div>
-        <button type="submit" class="btn btn-success">Submit</button>
+        <button type="submit" class="btn btn-success" style="margin-top:-20px;">Submit</button>
       </form>
-     
-       
-      
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
-
+<div class="clearfix"></div>
 
 <div class="rw-column rw-content">
       
       
                 <div style="float-right">
-              <img src="img/cookinglady.png" align="right" style="margin-top:20px;" alt="Sweet Basil Cooking Lady">
+              <img src="img/cookinglady.png" align="right" style="margin-top:20px;border:solid thin #c19c62" alt="Sweet Basil Cooking Lady">
             </div>
         <div class="col-sm-8">
 
@@ -137,89 +127,79 @@
           </div>
 
           <div class="grid desk-12 both">
-            <div class="form-label">Images</div>
-            <div class="form-description">You can upload up to <ins>4</ins> images with a maximum size of <ins>2Mb</ins>.</div>
-            <div class="image-uploader">
-              <div class="images">
-                <div class="image">
-                  <img src="img/food/80x80/4.jpg" alt="" />
-                  <span class="remove" title="Remove"><i class="fa fa-trash"></i></span>
-                </div>
-                <div class="image">
-                  <img src="img/food/80x80/6.jpg" alt="" />
-                  <span class="remove" title="Remove"><i class="fa fa-trash"></i></span>
-                </div>
-                <div class="image">
-                  <img src="img/food/80x80/14.jpg" alt="" />
-                  <span class="remove" title="Remove"><i class="fa fa-trash"></i></span>
-                </div>
-              </div>
-              <div class="upload" title="Select images to upload"><i class="fa fa-upload"></i></div>
-            </div>
-          </div>
-
-          <div class="grid desk-12 both">
-            <div class="form-label">Video link (optional)</div>
-            <div class="form-description">The URL to a video hosted on YouTube or Vimeo. Please enter the full URL with 'http://' prefix.</div>
-            <input name="video_url" type="text" class="fullwidth" />
-          </div>
-
-          <div class="grid desk-12 both">
-            <div class="form-label">Ingredients</div>
-            <div class="form-description">Include amounts/measurements for each ingredient. Also you may add some additional notes for each ingredient if required.</div>
-
-                  <div class="grid-container">
-                    <div class="grid desk-6">
-                      <div class="form-label">Ingredient:</div>
-                      <input name="ingredient" type="text" class="fullwidth this-section-title-field" value=""  />
-                    </div>
-                    <div class="grid desk-6">
-                      <div class="form-label">Quantity:</div>
-                      <input name="ingredient" type="text" class="fullwidth this-section-label-field" value="" />
-                    </div>
-                    
-                    <div class="grid desk-12">
-                      <div class="form-label">Additional notes(optional):</div>
-                      <input name="ingredient" type="text" class="fullwidth" value="" />
-                    </div>
-
-                  </div>
-               
-
-
-            <div class="form-label">Preparation mode</div>
-            <div class="form-description">List steps in the way they should be done in order to successfully make the dish. Be specific, but keep it short.</div>
-            <textarea name="preparation_mode" class="big"></textarea>
-          </div>
-
-          <p class="clearfix"></p>
-          <hr />
-          <h5>Optional</h5>
-          <div class="form-description">Everything after this is optional. If you have filled all the above fields you can hit the "Submit" button and don't worry about anything else.</div><br />
-
-          <div class="grid desk-12 both">
-            <div class="form-label">Footnotes</div>
-            <div class="form-description">Include info about other ways to cook or serve this dish. Add tips for ingredients substitutions. Don't add info that describes the recipe - that goes best in the "Preparation mode" field.</div>
-            <textarea name="footnotes"></textarea>
-          </div>
-
-          <div class="grid desk-12 both">
-            <div class="form-label">Links</div>
-            <div class="form-description">Have more info about this? Post the links here for reference.</div>
+            <div class="form-label">Author</div>
+            <div class="form-description">Add your name to the books and become famous, or give credit to your Great Aunt Betty for her fabulous recipe!</div>
          <div>
                   <div class="grid-container">
-                    <div class="grid desk-6">
-                      <div class="form-label">Title:</div>
-                      <input name="links" type="text" class="fullwidth this-section-title-field" value="" />
-                    </div>
-                    <div class="grid desk-6">
-                      <div class="form-label">URL:</div>
-                      <input name="links" type="text" class="fullwidth this-section-label-field" value="" />
-                    </div>
-                  </div>
+
+                      <input name="author" type="text" class="fullwidth this-section-title-field" value="" />
+
           </div>
 
-          <div class="grid desk-6 alpha">
+<div class="grid desk-12 both">
+            <div class="form-label">Image or Video Link (optional)</div>
+            <div class="form-description">You may add either a link to an image or a video hosted on YouTube or Vimeo. Please enter the full URL with "http://" prefix.</div>
+         
+                 
+                    <div class="grid desk-6 both">
+                      <div class="form-label">URL:</div>
+                      <input name="link" type="text" style="width:90%" class="this-section-title-field" value="" />
+                    </div>
+                   <div class="grid desk-6 both">
+                      <div class="form-label">Description:</div>
+                      <input name="link-description" type="text" style="width:100%" class="this-section-label-field" value="" />
+                    </div>
+                  
+          </div>
+
+          <div class="grid desk-12 both">
+            <div class="form-label">Ingredients/Quantity</div>
+            <div class="form-description">Add one ingredient at a time, including the correct measurement for that ingredient. If you wish, you may add additional notes. Click on the "Add Ingredient" button to add each ingredient.</div>
+
+         <div class="grid-container">
+             <input style="width:90%" name="ingredient" type="text" class="this-section-title-field" placeholder="Enter one ingredient/quantity at a time"/>
+             <input style="margin-top:16px;margin-left:10px;" type="submit" value="Add" class="btn btn-danger" />
+         </div>
+
+<!--onclick test
+<script>
+function myFunction() {
+document.getElementById("demo").innerHTML = "Hello World";
+}
+</script>
+
+          <div class="grid-container">
+             <input style="width:90%" name="ingredient" type="text" class="this-section-title-field" placeholder="Enter one ingredient/quantity at a time"/>
+             <input onclick="myFunction()" style="margin-top:16px;margin-left:10px;" type="submit" value="Add" class="btn btn-danger" />
+
+         </div>
+onclick end test-->
+
+         <div class="grid-container">
+            <div class="form-label">Directions</div>
+            <div class="form-description">List steps in the proper order, to successfully make the dish. Be specific, but keep it short.</div>
+            <textarea name="directions" class="big"></textarea>
+          </div>
+
+          <div class="grid desk-12 both">
+            <div class="form-label">Comments</div>
+            <div class="form-description">Include info about other ways to cook or serve this dish. Add tips for ingredient substitutions.</div>
+            <textarea name="comments"></textarea>
+          </div>
+
+         <div class="grid desk-6 both">
+            <div class="form-label">Preparation time (in minutes)</div>
+            <div class="form-description">How long should this recipe take to complete?</div>
+            <input name="preparation_time" type="number" />
+          </div>
+
+          <div class="grid desk-6 both">
+            <div class="form-label">Servings</div>
+            <div class="form-description">How many folks can you feed with this recipe?</div>
+            <input name="servings" type="number" />
+          </div> 
+
+          <div class="grid desk-6 both">
             <div class="form-label">Difficulty</div>
             <div class="form-description">Select the level of this recipe.</div>
             <div class="visual-select">
@@ -229,28 +209,21 @@
             </div>
           </div>
 
-          <div class="grid desk-6 omega">
-            <div class="form-label">Preparation time(in minutes)</div>
-            <div class="form-description">How long it takes to do and finish everything.</div>
-            <input name="preparation_time" type="number" />
-          </div>
-
 
           <div class="grid desk-12 both">
-            <input type="submit" value="Submit" class="btn btn-success" />
+            <input type="submit" value="Submit Your Recipe" class="btn btn-success" />
           </div>
         </div>
           </form>
         
-</div></div></div></div></div></div></div>
+</div></div></div></div></div></div></div></div></div></div>
 
-
-
-     
-
-<footer class="footer">
-  <div class="container" style="margin-left:150px;"><p>&copy; Copyright, 2018. All rights reserved. | Hanh Briggs, Ian Goodnight, Ethan Wollenber, Patricia Smith</p></div>
-</footer>
+  
+ <footer class="text-muted">
+          <div class="container" style="background-color:#ffffff;color:#c19c62;border-top:solid thin #c19c62;">
+            <p style="font-size:12px;margin-top:10px;">&copy; Copyright, 2018. All rights reserved. | Hanh Briggs, Ian Goodnight, Ethan Wollenber, Patricia Smith</p>
+          </div>
+        </footer>
   </body>
 
 
