@@ -7,8 +7,11 @@
     <link type='text/css' href='css/basic.css' rel='stylesheet' media='screen' />
     <!-- jQuery -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+    <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
 
+
+   <!--Parsley.js -->
+    <script src="js/parsley.min.js"></script>
 
 
     <!-- Bootstrap -->
@@ -25,11 +28,14 @@
     <!--modal login and signup-->
 <div class="container" style="background-color: #ffffff;padding:20px;">
       <div id="basic-modal">
-     <button name="basic" type="submit" class="btn-primary btn-sm" id="add-reset-btn" style="float:right;margin-top:20px;">Signup</button>
+     <button name="basic" type="submit" class="btn btn-default basic" id="add-reset-btn" style="background-color:#006bc8;color:#ffffff;float:right;margin-top:20px;">Signup</button>
 </div>
 <div id="basic1-modal">
-     <button name="basic1" type="submit" class="btn-primary btn-sm" id="add-submit-btn" style="margin-top:20px;float:right;margin-right:20px;">Login</button>
+     <button name="basic1" type="submit" class="btn btn-success basic1" id="add-submit-btn" style="margin-top:20px;background-color:#7CB900;float:right;margin-right:20px;">Login</button>
 </div>
+
+
+
 
 <!--logo-->
 <img src="img/logo.png">
@@ -186,7 +192,7 @@
   <p>Everything seems to be ok :)</p>
 </div>
 <h2>Login</h2>
-<form id="demo-form" data-parsley-validate="">
+<form id="demo-form" data-parsley-validate>
   <label for="fullname">Username * :</label>
   <input type="text" class="form-control" name="fullname" required="">
 <br/>
@@ -204,7 +210,7 @@ $(function () {
     $('.bs-callout-warning').toggleClass('hidden', ok);
   })
   .on('form:submit', function() {
-    return true; // Don't submit form for this demo
+    return false; // Don't submit form for this demo
   });
 });
 </script>
@@ -222,7 +228,7 @@ $(function () {
   <p>Everything seems to be ok :)</p>
 </div>
 <h2>Create an Account</h2>
-<form id="demo-form" data-parsley-validate="">
+<form id="demo-form" data-parsley-validate>
   <label for="fullname">Full Name * :</label>
   <input type="text" class="form-control" name="fullname" required="">
 <br/>
@@ -240,7 +246,7 @@ $(function () {
     $('.bs-callout-warning').toggleClass('hidden', ok);
   })
   .on('form:submit', function() {
-    return true; // Don't submit form for this demo
+    return false; // Don't submit form for this demo
   });
 });
 </script>
