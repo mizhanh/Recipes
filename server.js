@@ -19,15 +19,17 @@ app.use(express.static(process.cwd() + "/public"));
 //Override with POST having ? method=DELETE
 app.use(methodOverride("_method"));
 
-// Set Handlebars.
-var exphbs = require("express-handlebars");
-app.engine("handlebars", exphbs({ defaultLayout: "main" }));
-app.set("view engine", "handlebars");
+// // Set Handlebars.
+// var exphbs = require("express-handlebars");
+// app.engine("handlebars", exphbs({ defaultLayout: "main" }));
+// app.set("view engine", "handlebars");
 
-// Import routes and give the server access to them.
-var router = require("./controllers/burgers_controller.js");
+// Static directory
+app.use(express.static("public"));
 
-app.use('/',router);
+// Routes
+// ============================================================
+require("./routes/html-routes.js")(app);
 
 db.sequelize.sync().then(function(){
 	app.listen(PORT, function() {
