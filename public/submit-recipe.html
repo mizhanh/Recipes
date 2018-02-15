@@ -142,11 +142,11 @@
             <div class="form-description">Add one ingredient at a time, including the correct measurement for that ingredient. If you wish, you may add additional notes. Click on the "Add Ingredient" button to add each ingredient.</div>
 
         <div class="grid-container">
-             <input id="ingredient1" style="width:90%" name="ingredient1" type="text" class="this-section-title-field" placeholder="Enter one ingredient/quantity at a time"/>
-             <input id="submit-ingredient1" style="margin-top:16px;margin-left:10px;" type="submit" value="Add" class="btn btn-danger" />
+             <input id="ingredient" style="width:90%" name="ingredient" type="text" class="this-section-title-field" placeholder="Enter one ingredient/quantity at a time"/>
+             <input id="submit-ingredient" style="margin-top:16px;margin-left:10px;" type="submit" value="Add" class="btn btn-danger" />
          </div>
-         <div class="ingredientsContainer">
-         <input id="newIngredientInput" style="width:90%" name="newIngredientInput" type="text" class="this-section-title-field">
+         <div id="ingredientsContainer">
+         <!-- <input id="newIngredientInput" style="width:90%" name="newIngredientInput" type="text" class="this-section-title-field"> -->
        </div>
 
          <div class="grid-container">
@@ -176,10 +176,10 @@
           <div class="grid desk-6 both">
             <div class="form-label">Difficulty</div>
             <div class="form-description">Select the level of this recipe.</div>
-            <div class="visual-select">
-              <label><input id="difficulty-easy" type="radio" name="difficulty" value="easy" data-label="Easy" checked="1">Easy</label>
-              <label><input id="difficulty-moderate" type="radio" name="difficulty" value="moderate" data-label="Moderate">Moderate</label>
-              <label><input id="difficulty-hard" type="radio" name="difficulty" value="hard" data-label="Hard">Hard</label><br><br>
+            <div class="visual-select" id="difficult-level">
+              <label><input type="radio" name="difficulty" value="easy" data-label="Easy" checked="1">Easy</label>
+              <label><input type="radio" name="difficulty" value="moderate" data-label="Moderate">Moderate</label>
+              <label><input type="radio" name="difficulty" value="hard" data-label="Hard">Hard</label><br><br>
             </div>
           </div>
 
@@ -205,4 +205,6 @@
 <script type='text/javascript' src='js/jquery.simplemodal.js'></script>
 <script type='text/javascript' src='js/basic.js'></script>
 <!-- Link to the documentation for this modal: http://www.ericmmartin.com/projects/simplemodal/  -->
+
+<script src="js/submit-recipe.js" type="text/javascript"></script>
 </html>
