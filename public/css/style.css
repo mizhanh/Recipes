@@ -49,6 +49,15 @@ h2 {
 
 }
 
+h5 {
+    font-family: 'Open Sans', sans-serif;
+    font-size:15px;
+    color:#000000;
+    font-weight:400;
+    padding-bottom:5px;
+
+}
+
 .jumbotron {
     margin-top:20px;
     background-color:#ffffff;
