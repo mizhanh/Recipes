@@ -3,7 +3,7 @@
 /* Overlay */
 #simplemodal-overlay {background-color:#fff;}
 /* Container */
-#simplemodal-container {height:400px; width:500px; color:#000; background-color:#c19c62; border:0px solid #000; padding:12px;}
+#simplemodal-container {border:solid thick #c19c62;padding:10px;box-shadow: 5px 10px 18px #888888;height:400px; width:600px; color:#000; background-image:url("../img/vegetables.png"); background-repeat:none; border:0px solid #000; padding:12px;}
 #simplemodal-container .simplemodal-data {padding:8px;}
 #simplemodal-container code {background:#141414; border-left:3px solid #65B43D; color:#000; display:block; font-size:12px; margin-bottom:12px; padding:4px 6px 6px;}
 #simplemodal-container a {color:#ddd;}
@@ -13,6 +13,6 @@
 .login-form {
 	font-size:18px;
 	font-weight:normal;
-	color:#000;
+	color:#ffffff;
 
 }
