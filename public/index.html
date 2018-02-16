@@ -6,8 +6,8 @@
     <!-- Form CSS files -->
     <link type='text/css' href='css/basic.css' rel='stylesheet' media='screen' />
     <!-- jQuery -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>-->
+   <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
 
 
    <!--Parsley.js -->
@@ -21,12 +21,28 @@
     <link rel="stylesheet" href="css/style.css">
  
      <!-- Google fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
     <script src="js/basic.js"></script>
+    <style>
+    .parsley-errors-list li.parsley-required {
+    background: green;
+    padding: 10px;
+    color: #fff;
+    border-radius: 10;
+}
+    .parsley-errors-list li.parsley-type {
+    background: green;
+    padding: 10px;
+    color: #fff;
+    border-radius: 10;
+}
+</style>
   </head>
   <body>
-    <!--modal login and signup-->
+    
 <div class="container" style="background-color: #ffffff;padding:20px;">
+
+  <!--modal login and signup-->
       <div id="basic-modal">
      <button name="basic" type="submit" class="btn btn-default basic" id="add-reset-btn" style="background-color:#006bc8;color:#ffffff;float:right;margin-top:20px;">Signup</button>
 </div>
@@ -53,7 +69,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="index.html">Sweet Basil Recipes</a>
+      <a class="navbar-brand" href="index.html">Home</a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -183,23 +199,23 @@
 <!-- Login Simple Modal Form -->
 <div id="basic1-modal-content">
       <div class="bs-callout bs-callout-warning hidden">
-  <h4>Oh snap!</h4>
-  <p>This form seems to be invalid :(</p>
+  <h4 style="margin-bottom:0px;color:#ffffff">Oh snap!</h4>
+  <p style="margin-bottom:5px;color:#ffffff">This form seems to be invalid :(</p>
 </div>
 
 <div class="bs-callout bs-callout-info hidden">
-  <h4>Yay!</h4>
-  <p>Everything seems to be ok :)</p>
+  <h4 style="margin-bottom:0px;color:#ffffff">Yay!</h4>
+  <p style="margin-bottom:5px;color:#ffffff">Everything seems to be ok :)</p>
 </div>
-<h2>Login</h2>
+<h2 style="color:#ffffff;font-size:30px;text-align:center;font-weight:bold;">LOGIN</h2>
 <form id="demo-form" data-parsley-validate>
-  <label for="fullname">Username * :</label>
-  <input type="text" class="form-control" name="fullname" required="">
+  <label style="font-weight:bold;" for="fullname">Username:</label>
+  <input id="modal-fullname" type="text" class="form-control" name="fullname" required="">
 <br/>
-  <label for="Password">Password * :</label>
-  <input type="Password" class="form-control" name="email" data-parsley-trigger="change" required="">
+  <label style="font-weight:bold" for="Password">Password:</label>
+  <input id="modal-email" type="Password" class="form-control" name="email" data-parsley-trigger="change" required="">
 <br/>  
-  <input type="submit" class="btn btn-default" value="Submit">
+  <input id="modal-login-submit" type="submit" class="btn btn-success" value="Submit">
 
 </form>
 <script type="text/javascript">
@@ -219,23 +235,23 @@ $(function () {
  <!-- create an account simple modal -->
     <div id="basic-modal-content">
       <div class="bs-callout bs-callout-warning hidden">
-  <h4>Oh snap!</h4>
-  <p>This form seems to be invalid :(</p>
+  <h4 style="margin-bottom:0px;color:#ffffff">Oh snap!</h4>
+  <p style="margin-bottom:5px;color:#ffffff">This form seems to be invalid :(</p>
 </div>
 
 <div class="bs-callout bs-callout-info hidden">
-  <h4>Yay!</h4>
-  <p>Everything seems to be ok :)</p>
+  <h4 style="color:#ffffff">Yay!</h4>
+  <p style="color:#ffffff">Everything seems to be ok :)</p>
 </div>
-<h2>Create an Account</h2>
+<h2 style="color:#ffffff;font-size:30px;text-align:center;font-weight:bold;">Create an Account</h2>
 <form id="demo-form" data-parsley-validate>
-  <label for="fullname">Full Name * :</label>
-  <input type="text" class="form-control" name="fullname" required="">
+  <label for="fullname">Full Name:</label>
+  <input id="modal-create-account-fullname" type="text" class="form-control" name="fullname" required="">
 <br/>
-  <label for="email">Email * :</label>
-  <input type="email" class="form-control" name="email" data-parsley-trigger="change" required="">
+  <label for="email">Email:</label>
+  <input id="modal-create-account-email" type="email" class="form-control" name="email" data-parsley-trigger="change" required="">
 <br/>
-  <input type="submit" class="btn btn-default" value="Submit">
+  <input id="modal-create-account-submit" type="submit" class="btn btn-success" value="Submit">
 </form>
 
 <script type="text/javascript">
@@ -259,7 +275,7 @@ $(function () {
         </footer>
 <!-- Script -->
 <!-- Load jQuery, SimpleModal and Basic JS files -->
-<script type='text/javascript' src='js/jquery.js'></script>
+
 <script type='text/javascript' src='js/jquery.simplemodal.js'></script>
 <!-- Link to the documentation for this modal: http://www.ericmmartin.com/projects/simplemodal/  -->
 <script type='text/javascript' src='js/basic.js'></script>
