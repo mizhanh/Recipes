@@ -7,7 +7,7 @@ CREATE TABLE recipes
 	title varchar(30) NOT NULL,
     category varchar (17) NOT NULL,
     author varchar(40) NOT NULL,
-    URL varchar() NOT NULL,
+    URL varchar(400) NOT NULL,
     description varchar (400) NOT NULL,
 	comments varchar (400) NOT NULL,
     preparationTime varchar (10) NOT NULL,
