@@ -18,13 +18,14 @@ $("#submit-ingredient").on("click", function(event) {
     $("#ingredient").val("");
 });
 
+
 //-------------------------------------------------------------
 // Recipe inputs
 //-------------------------------------------------------------
 // When user clicks Submit Your Recipe button
 $("#submit-recipe").on("click", function(event) {
     event.preventDefault();
-
+  
   // Make a recipe object
   var newRecipe = {
     title: $("#title").val().trim(),

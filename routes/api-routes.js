@@ -22,9 +22,10 @@ module.exports = function(app) {
 
 
   app.post("/api/new", function(req, res) {
+    debugger;
   	var recipe = req.body;
   	console.log(recipe);
-  	db.Recipe.create(req.body)
+  	db.recipe.create(req.body)
   	// db.Recipe.create({
   	// 	title: recipe.title,
   	// 	category: recipe.category,
