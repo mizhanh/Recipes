@@ -33,7 +33,7 @@ $("#submit-recipe").on("click", function(event) {
     author: $("#author").val().trim(),
     URL: $("#link").val().trim(),
     description: $("#link-description").val().trim(),
-    ingredient: ingredientList,
+    ingredients: ingredientList,
     directions: $("#directions").val().trim(),
     comments: $("#comments").val().trim(),
     preparation_time: $("#preparation_time").val().trim(),
