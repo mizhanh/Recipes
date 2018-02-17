@@ -24,20 +24,20 @@ module.exports = function(app) {
   app.post("/api/new", function(req, res) {
   	var recipe = req.body;
   	console.log(recipe);
-  	db.Recipe.create(req.body)
-  	// db.Recipe.create({
-  	// 	title: recipe.title,
-  	// 	category: recipe.category,
-  	// 	author: recipe.author,
-  	// 	URL: recipe.URL,
-  	// 	description: recipe.description,
-  	// 	ingredients: recipe.ingredients,
-  	// 	directions: recipe.directions,
-  	// 	comments: recipe.comments,
-  	// 	preparation_time: recipe.preparation_time,
-  	// 	servings: recipe.servings,
-  	// 	difficulty: recipe.difficulty
-  	// })
+  	// db.Recipe.create(recipe)
+  	db.Recipe.create({
+  		title: recipe.title,
+  		category: recipe.category,
+  		author: recipe.author,
+  		URL: recipe.URL,
+  		description: recipe.description,
+  		ingredients: recipe.ingredients,
+  		directions: recipe.directions,
+  		comments: recipe.comments,
+  		preparation_time: recipe.preparation_time,
+  		servings: recipe.servings,
+  		difficulty: recipe.difficulty
+  	})
   	.then(function(dbRecipe) {
   		res.json(dbRecipe);
   	});
