@@ -32,6 +32,20 @@ module.exports = function(app) {
     });
   });
 
+  // GET route for getting all of the recipes
+  app.get("/api/all/ingredients", function(req, res) {
+    db.recipe.findAll({})
+    .then(function(dbRecipe) {
+      var listIngredients = [];
+      for (var i = 0; i < dbRecipe.length; i++) {
+        for (var j = 0; j < dbRecipe[i].ingredients.length; j++) {
+          listIngredients.push(dbRecipe[i].ingredients[j]);
+        }
+      }
+      res.json(listIngredients);
+    });
+  });
+
   app.post("/api/new", function(req, res) {
     debugger;
   	var recipe = req.body;
