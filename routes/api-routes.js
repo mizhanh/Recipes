@@ -14,9 +14,9 @@ module.exports = function(app) {
 
   // GET route for getting all of the recipes
   app.get("/api/all/", function(req, res) {
-    db.Post.findAll({})
-    .then(function(dbPost) {
-      res.json(dbPost);
+    db.Recipe.findAll({})
+    .then(function(dbRecipe) {
+      res.json(dbRecipe);
     });
   });
 
@@ -39,6 +39,9 @@ module.exports = function(app) {
   	// 	servings: recipe.servings,
   	// 	difficulty: recipe.difficulty
   	// })
+
+  	// db.Recipe.create(recipe)
+  	
   	.then(function(dbRecipe) {
   		res.json(dbRecipe);
   	});
