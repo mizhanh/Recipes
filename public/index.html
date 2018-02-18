@@ -75,14 +75,14 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li  class="active"><a href="browse-recipes.html">Browse Recipes</a></li>
+  
         <li><a href="submit-recipe.html">Submit Your Recipes</a></li>
       </ul>
        <ul class="nav navbar-nav">
         <li><a href="my-recipes.html">My Recipes</a></li>
        
       </ul>
-      <form class="navbar-form navbar-right">
+      <!--<form class="navbar-form navbar-right">
         <div class="form-group">
           <input style="margin-top:-2px;" type="text" class="form-control" placeholder="Search">
         </div>
@@ -127,61 +127,45 @@
   </a>
 </div>
 
-      <div class="row" style="margin-top:50px;">
- <div class="col-sm-12" align="center">
-   <h1>Top Recipes</h1>
-        </div>
+     <div class="clearfix"></div>
+ 
 
-
+      <div class="row">
+ 
         <div class="col-sm-8">
+   <h1>Browse Recipes</h1>
+          <!-- search panel box -->
+          <div class="panel panel-primary" align="left" style="margin-top:40px;">
+            <div class="panel-heading" style="border-color:#c19c62;">
+              <h3 class="panel-title"><strong style="color:black">Search for Recipes</strong></h3>
+            </div>
             <div class="panel-body">
               <!-- Form -->
               <form>
-                <h2><strong>Eggs Benedict</strong></h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos accusantium voluptatum enim mollitia, consectetur sed rerum, at similique, numquam, pariatur illo nam quo aliquid porro. Unde nulla a laboriosam est.</p>
-                
-                <button type="submit" class="btn btn-success" id="add-submit-btn" style="background-color:#7CB900">Read Full Recipe</button>
+                <div class="form-group">
+                  <label for="first-ingredient">Main Recipe Ingredient</label>
+                  <input type="text" class="form-control" id="recipe-ingredients">
+                </div>
                
+                <div class="form-group">
+                  <label for="steps">Category</label>
+                  <input type="text" class="form-control" id="recipe-category">
+                </div>
+                
+                <button type="submit" class="btn btn-success" id="add-submit-btn">Submit</button>
+                <button type="submit" class="btn btn-danger" id="add-reset-btn">Reset</button>
               </form>
             </div>
+          </div>
+ 
         </div>
-<div class="col-sm-4">
-<img src="img/eggs-benedict.jpg" align="right" style="margin-top:20px;" width="350px">
+
+
+<div class="col-sm-4" style="margin-top:20px;">
+<img style="border:solid thin #c19c62" src="img/prawns.png" align="right">
+
 </div>
 
-
-        <div class="col-sm-8">
-            <div class="panel-body">
-              <!-- Form -->
-              <form>
-                <h2><strong>Pasta Bolognese</strong></h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos accusantium voluptatum enim mollitia, consectetur sed rerum, at similique, numquam, pariatur illo nam quo aliquid porro. Unde nulla a laboriosam est.</p>
-                
-                <button type="submit" class="btn btn-success" id="add-submit-btn" style="background-color:#7CB900">Read Full Recipe</button>
-               
-              </form>
-            </div>
-        </div>
-<div class="col-sm-4">
-<img src="img/pasta-bolognese.jpg" align="right" style="margin-top:20px;" width="350px">
-</div>
-
-
-        <div class="col-sm-8">
-            <div class="panel-body">
-              <!-- Form -->
-              <form>
-                <h2><strong>Pound Cake</strong></h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos accusantium voluptatum enim mollitia, consectetur sed rerum, at similique, numquam, pariatur illo nam quo aliquid porro. Unde nulla a laboriosam est.</p>
-                
-                <button type="submit" class="btn btn-success" id="add-submit-btn" style="background-color:#7CB900">Read Full Recipe</button>
-               
-              </form>
-            </div>
-        </div>
-<div class="col-sm-4">
-<img src="img/pound-cake.jpg" align="right" style="margin-top:20px;" width="350px">
-</div>
 
 
     </div>
@@ -189,11 +173,7 @@
     <div class="row" style="margin-left:30px;">
      <div class="col-lg-2" align="right" style="margin-top:20px;" width="30%">
    
-     </div>
-
-    </div>
-
-
+     </div></div></div>
 
 
 <!-- Login Simple Modal Form -->
