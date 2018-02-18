@@ -42,7 +42,7 @@ $("#submit-recipe").on("click", function(event) {
   };
 
   // To check if newRecipe object work 
-    console.log(newRecipe);
+    // console.log(newRecipe);
 
   // Send an AJAX POST-request with jQuery
   $.post("/api/new", newRecipe)

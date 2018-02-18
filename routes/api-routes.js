@@ -20,7 +20,7 @@ module.exports = function(app) {
     });
   });
 
-  // GET route for getting all of the recipes
+  // GET route for searching recipes by category
   app.get("/api/all/category/:category", function(req, res) {
     db.recipe.findAll({
       where: {
@@ -32,7 +32,7 @@ module.exports = function(app) {
     });
   });
 
-  // GET route for getting all of the recipes
+  // GET route for getting ingredients from all recipes
   app.get("/api/all/ingredients", function(req, res) {
     db.recipe.findAll({})
     .then(function(dbRecipe) {
@@ -46,13 +46,27 @@ module.exports = function(app) {
     });
   });
 
+  // Add sequelize code to create a new recipe
   app.post("/api/new", function(req, res) {
-    debugger;
+    // debugger;
   	var recipe = req.body;
   	console.log(recipe);
   	db.recipe.create(req.body)
   	.then(function(dbRecipe) {
   		res.json(dbRecipe);
-  	});
+  	})
   });
+
+  // Add sequelize code to delete a recipe
+  app.post("/api/delete", function(req, res){
+    recipe.destroy({
+      where: {
+        id: req.body.id
+      }
+    }).then(function(dbRecipe){
+      res.end();
+    })
+
+  });
+
 };

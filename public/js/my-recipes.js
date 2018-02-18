@@ -2,9 +2,9 @@
 $(function(){
 
 $.get("/api/all", function(data) {
-  // For each book that our server sends us back
+  // For each recipe that our server sends us back
   for (var i = 0; i < data.length; i++) {
-    // Create a parent div to hold book data
+    // Create a parent div to hold recipes data
     var myRecipes = $("<div>");
     // Add a class to this div: 'well'
     myRecipes.addClass("well");
@@ -14,16 +14,16 @@ $.get("/api/all", function(data) {
     $("#show-submit-recipe").append(myRecipes);
 
   //   // Now  we add our book data to the well we just placed on the page
-    $("#My_Recipe_" + i).append("<h3>" + (i + 1) + ". " + data[i].title + "</h>");
-    $("#My_Recipe_" + i).append("<h4>Author: " + data[i].author + "</h4>");
-    $("#My_Recipe_" + i).append("<h3>URL: " + data[i].URL + "</h4>");
-    $("#My_Recipe_" + i).append("<h4>Description: " + data[i].description + "</h4>");
-    $("#My_Recipe_" + i).append("<h4>Ingredients: " + data[i].ingredients + "</h4>");
-    $("#My_Recipe_" + i).append("<h4>Directions: " + data[i].directions + "</h4>");
-    $("#My_Recipe_" + i).append("<h4>Comment: " + data[i].comment + "</h4>");
-    $("#My_Recipe_" + i).append("<h4>Preparation Time: " + data[i].preparation_time + "</h4>");
-    $("#My_Recipe_" + i).append("<h4>Servings: " + data[i].servings + "</h4>");
-    $("#My_Recipe_" + i).append("<h4>Difficulty: " + data[i].difficulty + "</h4>");
+    $("#My_Recipe_" + i).append("<h3>" + (i + 1) + ". " + data[i].title + "</h3>");
+    $("#My_Recipe_" + i).append("<h5>Author: " + data[i].author + "</h5>");
+    $("#My_Recipe_" + i).append("<h5>URL: " + data[i].URL + "</h5>");
+    $("#My_Recipe_" + i).append("<h5>Description: " + data[i].description + "</h5>");
+    $("#My_Recipe_" + i).append("<h5>Ingredients: " + data[i].ingredients + "</h5>");
+    $("#My_Recipe_" + i).append("<h5>Directions: " + data[i].directions + "</h5>");
+    $("#My_Recipe_" + i).append("<h5>Comment: " + data[i].comment + "</h5>");
+    $("#My_Recipe_" + i).append("<h5>Preparation Time: " + data[i].preparation_time + "</h5>");
+    $("#My_Recipe_" + i).append("<h5>Servings: " + data[i].servings + "</h5>");
+    $("#My_Recipe_" + i).append("<h5>Difficulty: " + data[i].difficulty + "</h5>");
   }
 });
 
