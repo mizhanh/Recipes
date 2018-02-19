@@ -21,15 +21,16 @@ module.exports = function(app) {
   });
 
   // GET route for searching recipes by category
-  app.get("/api/all/category/:category", function(req, res) {
-    db.recipe.findAll({
-      where: {
-        category: req.params.category
+  app.get("/api/category/:category", function(req, res) {
+    if (req.params.category) {
+        db.recipe.findAll({
+          where: {
+            category: req.params.category
       }
-    })
-    .then(function(dbRecipe) {
+    }).then(function(dbRecipe) {
       res.json(dbRecipe);
-    });
+      });
+    }
   });
 
   // GET route for getting ingredients from all recipes

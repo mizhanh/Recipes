@@ -152,9 +152,23 @@
                   <input type="text" class="form-control" id="recipe-category">
                 </div>
                 
-                <button type="submit" class="btn btn-success" id="add-submit-btn">Submit</button>
-                <button type="submit" class="btn btn-danger" id="add-reset-btn">Reset</button>
+                <button type="submit" class="btn btn-success" id="search-btn">Search</button>
+               <!--  <button type="submit" class="btn btn-danger" id="add-reset-btn">Reset</button> -->
               </form>
+            </div>
+          </div>
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title"><strong>Recipes Search Results</strong></h3>
+            </div>
+            <div class="panel-body">
+              <div class="well" id="stats">
+                <h2 id="title"></h2>
+                <div>
+                   <span id="recipe-ingredients"></span></h3>
+                   <span id="recipe-category"></span></h3>
+                </div>
+              </div>
             </div>
           </div>
  
@@ -247,7 +261,9 @@ $(function () {
 });
 </script>
       
-    </div></div>
+  <!--   </div> -->
+
+  </div>
  <footer class="text-muted">
           <div class="container" style="background-color:#ffffff;color:#c19c62;border-top:solid thin #c19c62;">
             <p style="font-size:12px;margin-top:10px;">&copy; Copyright, 2018. All rights reserved. | Hanh Briggs, Ian Goodnight, Ethan Wollenberg, Patricia Smith</p>
@@ -260,6 +276,8 @@ $(function () {
 <!-- Link to the documentation for this modal: http://www.ericmmartin.com/projects/simplemodal/  -->
 <script type='text/javascript' src='js/basic.js'></script>
 <script type='text/javascript' src='js/parsley.js'></script>
+
+<script type='text/javascript' src='js/homepage.js'></script>
   </body>
 
 </html>

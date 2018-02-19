@@ -13,8 +13,9 @@ $.get("/api/all", function(data) {
   //   // Append the well to the well section
     $("#show-submit-recipe").append(myRecipes);
 
-  //   // Now  we add our book data to the well we just placed on the page
+  //   // Now  we add our recipe data to the well we just placed on the page
     $("#My_Recipe_" + i).append("<h3>" + (i + 1) + ". " + data[i].title + "</h3>");
+    $("#My_Recipe_" + i).append("<h5>Category: " + data[i].category + "</h5>");
     $("#My_Recipe_" + i).append("<h5>Author: " + data[i].author + "</h5>");
     $("#My_Recipe_" + i).append("<h5>URL: " + data[i].URL + "</h5>");
     $("#My_Recipe_" + i).append("<h5>Description: " + data[i].description + "</h5>");
