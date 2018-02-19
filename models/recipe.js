@@ -30,8 +30,9 @@ module.exports = function(sequelize, DataTypes) {
     // prep time (integer)
     servings: DataTypes.INTEGER,
     //  servings (integer)
-    difficulty: DataTypes.STRING
-    // there may be a better way to store this
+    difficulty: DataTypes.STRING,
+    // favorite?
+    favorite: {type: DataTypes.BOOLEAN, allowNull: false, defaultValue: false}
   }, {
     timestamps: false
   });

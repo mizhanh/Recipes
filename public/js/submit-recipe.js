@@ -38,7 +38,8 @@ $("#submit-recipe").on("click", function(event) {
     comments: $("#comments").val().trim(),
     preparation_time: $("#preparation_time").val().trim(),
     servings: $("#servings").val().trim(),
-    difficulty: $("input[name='difficulty']:checked").val()
+    difficulty: $("input[name='difficulty']:checked").val(),
+    favorite: $("input[name='favorite']:checked").val()
   };
 
   // To check if newRecipe object work 
@@ -63,6 +64,7 @@ $("#submit-recipe").on("click", function(event) {
   $("#comments").val("");
   $("#preparation_time").val("");
   $("#servings").val("");
+  $("#favorite").val("");
 });
 
 

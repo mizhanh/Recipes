@@ -1,7 +1,7 @@
 
 $(function(){
 
-$.get("/api/all", function(data) {
+$.get("/api/all/favorite", function(data) {
   // For each recipe that our server sends us back
   for (var i = 0; i < data.length; i++) {
     // Create a parent div to hold recipes data
@@ -25,6 +25,7 @@ $.get("/api/all", function(data) {
     $("#My_Recipe_" + i).append("<h5>Preparation Time: " + data[i].preparation_time + "</h5>");
     $("#My_Recipe_" + i).append("<h5>Servings: " + data[i].servings + "</h5>");
     $("#My_Recipe_" + i).append("<h5>Difficulty: " + data[i].difficulty + "</h5>");
+    $("#My_Recipe_" + i).append("<h5>My Favorite: " + data[i].favorite + "</h5>");
   }
 });
 

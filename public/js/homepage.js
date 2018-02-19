@@ -42,6 +42,7 @@ $("#search-btn").on("click", function() {
 // Data rendering function on the homepage
 //==================================================================================
 
+
 function renderRecipes(data) {
   if (data.length !== 0) {
     $("#stats").empty();
@@ -62,9 +63,34 @@ function renderRecipes(data) {
       div.append("<p>Preparation Time: " + data[i].preparation_time + "</p>");
       div.append("<p>Servings: " + data[i].servings + "</p>");
       div.append("<p>Difficulty: " + data[i].difficulty + "</p>");
+      div.append("<p>Favorite: " + data[i].favorite + "</p");
+
+      if (data[i].favorite !== true) {
+          div.append("<button class='addFav' data-id='" + data[i].id + "'>Add My Favorite</button>");
+        };
 
       $("#stats").append(div);
     }
+
+    $(".addFav").click(function(){
+        var info = {
+          id: $(this).attr("data-id")
+        };
+        changeFav();
+    });
+
+    
+
+    function changeFav(){
+        $.ajax({
+          method: "PUT",
+          url: "/api/change",
+          success: function(){
+            alert("Added to My Recipe List!");
+          }
+        });
+    }
+
 
   }
 }
