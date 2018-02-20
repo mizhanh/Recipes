@@ -30,18 +30,36 @@ $("#search-btn").on("click", function(event) {
 // // When user hits the category-search-btn
 $("#search-btn").on("click", function() {
   // Save the category they typed into the category-search input
-  var categorySearched = $("#recipe-category").val().trim();
+  var categorySearched = $("#recipe-category option:selected").text();
   // Make an AJAX get request to our api
-  $.get("/api/category/" + categorySearched, function(data) {
+  $.get("/api/all/category/" + categorySearched, function(data) {
     // Log the data to the console
     console.log(data);
     // Call our renderRecipes function to add our recipes to the page
     renderRecipes(data);
   });
+
    $("#recipe-category").val("");
 });
 
+
 })
+
+//===================================================================================
+// Get all recipes
+//===================================================================================
+$(function(){
+
+  $("#view-all-btn").on("click", function() {
+
+      $.get("/api/all/", function(data){
+        console.log(data);
+        renderRecipes(data);
+       });
+  });
+
+})
+
 //=================================================================================
 // Data rendering function on the homepage
 //==================================================================================

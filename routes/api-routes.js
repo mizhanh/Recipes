@@ -36,9 +36,9 @@ module.exports = function(app) {
 
   // Get all favorite recipes
   app.get("/api/all/favorite", function(req, res) {
-        db.recipe.findAll({
+      db.recipe.findAll({
           where: {
-            favorite: req.body.favorite
+            favorite: "1"
       }
     }).then(function(dbRecipe) {
       res.json(dbRecipe);
@@ -82,7 +82,7 @@ module.exports = function(app) {
 
   // Add sequelize code to create a new recipe
   app.post("/api/new", function(req, res) {
-    // debugger;
+    debugger;
   	var recipe = req.body;
   	console.log(recipe);
   	db.recipe.create(req.body)
@@ -104,17 +104,17 @@ module.exports = function(app) {
   });
 
   // PUT route for updating favorite checkbox
-  app.put("/api/change", function(req, res) {
-    db.recipe.update(
-      {favorite: true,
-      },
-      {where: {id: req.body.id}
+  // app.put("/api/change", function(req, res) {
+  //   db.recipe.update(
+  //     {favorite: true,
+  //     },
+  //     {where: {id: req.body.id}
 
-    }).then(function(dbRecipe){
-      res.json(dbRecipe);
-    })
+  //   }).then(function(dbRecipe){
+  //     res.json(dbRecipe);
+  //   })
 
-  });
+  // });
 
 
 
