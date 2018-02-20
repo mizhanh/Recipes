@@ -147,26 +147,31 @@
                   <input type="text" class="form-control" id="recipe-ingredients">
                 </div>
                
-                <div class="form-group">
+                <div class="form-group" style="margin-bottom:50px;">
                   <label for="steps">Category</label>
-                  <input type="text" class="form-control" id="recipe-category">
-                </div>
-                
-                <button type="submit" class="btn btn-success" id="search-btn">Search</button>
-               <!--  <button type="submit" class="btn btn-danger" id="add-reset-btn">Reset</button> -->
+            <select style="height:32px;width:150px;" id="recipe-category" name="recipe-category" >
+              <option></option>
+              <option>Breakfast</option>
+              <option>Lunch</option>
+              <option>Dinner</option> 
+            </select>
+          </div>
+
+                <button type="submit" class="btn btn-success" id="search-btn" style="margin-bottom:20px;">Search by Ingredient/Category</button>
+               <button type="submit" class="btn btn-primary" id="view-all-btn" style="margin-left:20px;margin-bottom:20px;">View All Recipes</button>
               </form>
             </div>
           </div>
-          <div class="panel panel-default">
-            <div class="panel-heading">
-              <h3 class="panel-title"><strong>Recipes Search Results</strong></h3>
+          <div class="panel panel-default" style="border-color:#c19c62;">
+            <div class="panel-heading" style="border-color:#c19c62;">
+              <h3 class="panel-title"><strong style="color:black">Recipes Search Results</strong></h3>
             </div>
             <div class="panel-body">
               <div class="well" id="stats">
-                <h2 id="title"></h2>
+                <h2 id="title" style="font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;font-weight:bold;font-size:16px;text-align: left;margin-bottom:10px;"></h2>
                 <div>
-                   <span id="recipe-ingredients"></span></h3>
-                   <span id="recipe-category"></span></h3>
+                   <p style="font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;font-size:14px;text-align: left;margin-bottom:5px;"><span id="recipe-ingredients"></span></p>
+                   <p style="font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;font-size:14px;text-align: left;margin-bottom:5px;"><span id="recipe-ingredients"><span id="recipe-category"></span></p>
                 </div>
               </div>
             </div>
