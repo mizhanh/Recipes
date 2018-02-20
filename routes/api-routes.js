@@ -63,6 +63,23 @@ module.exports = function(app) {
     });
   });
 
+  app.get("/api/all/ingredients/:ingredient?", function(req, res) {
+    db.recipe.findAll({})
+    .then(function(dbRecipe) {
+      var searchIngredients = [];
+      for (var i = 0; i < dbRecipe.length; i++) {
+        for (var j = 0; j < dbRecipe[i].ingredients.length; j++) {
+          var thisIngredient = dbRecipe[i].ingredients[j];
+          var parsedIngredient = ing.parse(thisIngredient);
+          if (req.params.ingredient == parsedIngredient.name ){
+            searchIngredients.push(dbRecipe[i]);
+          }
+        }
+      }
+      res.json(searchIngredients);
+    });
+  });
+
   // Add sequelize code to create a new recipe
   app.post("/api/new", function(req, res) {
     // debugger;
