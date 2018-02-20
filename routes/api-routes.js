@@ -7,6 +7,7 @@
 // var Recipe = require("../models/recipe.js");
 // Requiring our Todo model
 var db = require("../models");
+var ing = require('ingredientparser');
 
 // Routes
 // =============================================================
@@ -53,7 +54,9 @@ module.exports = function(app) {
       var listIngredients = [];
       for (var i = 0; i < dbRecipe.length; i++) {
         for (var j = 0; j < dbRecipe[i].ingredients.length; j++) {
-          listIngredients.push(dbRecipe[i].ingredients[j]);
+          var thisIngredient = dbRecipe[i].ingredients[j];
+          var parsedIngredient = ing.parse(thisIngredient);
+          listIngredients.push(parsedIngredient.name);
         }
       }
       res.json(listIngredients);
