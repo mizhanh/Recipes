@@ -6,14 +6,18 @@
 var Sequelize = require("sequelize");
 
 // Creates mySQL connection using Sequelize
-var sequelize = new Sequelize("recipes_db", "root", "", {
-  host: "localhost",
-  dialect: "mysql",
-  pool: {
-    max: 5,
-    min: 0,
-    idle: 10000
-  }
+var sequelize;
+	if (process.env.JAWSDB_URL) {
+		new Sequelize(process.env.JAWSDB_URL);
+	} else {
+ 		new Sequelize("recipes_db", "root", "", {
+  	host: "localhost",
+  	dialect: "mysql",
+  	pool: {
+    	max: 5,
+    	min: 0,
+    	idle: 10000
+  	}
 });
 
 // Exports the connection for other files to use
