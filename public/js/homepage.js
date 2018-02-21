@@ -94,24 +94,22 @@ function renderRecipes(data) {
       $("#stats").append(div);
     }
 
+    // Add recipe from browser to favorite list of recipes
     $(".addFav").click(function(){
-        var info = {
-          id: $(this).attr("data-id")
-        };
-        changeFav();
+        var id = $(this).attr("data-id");
+         $.ajax({
+            method: "PUT",
+            url: "/api/all/" + id,
+          }).then(getRecipe); 
     });
 
-    
-
-    function changeFav(){
-        $.ajax({
-          method: "PUT",
-          url: "/api/change",
-          success: function(){
-            alert("Added to My Recipe List!");
-          }
-        });
+    function getRecipe(){
+      $.get("/api/all/", function(data){
+        var recipe = data;
+        console.log(recipe);
+      });
     }
+      
 
 
   }
