@@ -7,6 +7,7 @@
 // var Recipe = require("../models/recipe.js");
 // Requiring our Todo model
 var db = require("../models");
+var ing = require('ingredientparser');
 
 // Routes
 // =============================================================
@@ -35,9 +36,9 @@ module.exports = function(app) {
 
   // Get all favorite recipes
   app.get("/api/all/favorite", function(req, res) {
-        db.recipe.findAll({
+      db.recipe.findAll({
           where: {
-            favorite: req.body.favorite
+            favorite: "1"
       }
     }).then(function(dbRecipe) {
       res.json(dbRecipe);
@@ -53,16 +54,35 @@ module.exports = function(app) {
       var listIngredients = [];
       for (var i = 0; i < dbRecipe.length; i++) {
         for (var j = 0; j < dbRecipe[i].ingredients.length; j++) {
-          listIngredients.push(dbRecipe[i].ingredients[j]);
+          var thisIngredient = dbRecipe[i].ingredients[j];
+          var parsedIngredient = ing.parse(thisIngredient);
+          listIngredients.push(parsedIngredient.name);
         }
       }
       res.json(listIngredients);
     });
   });
 
+  app.get("/api/all/ingredients/:ingredient?", function(req, res) {
+    db.recipe.findAll({})
+    .then(function(dbRecipe) {
+      var searchIngredients = [];
+      for (var i = 0; i < dbRecipe.length; i++) {
+        for (var j = 0; j < dbRecipe[i].ingredients.length; j++) {
+          var thisIngredient = dbRecipe[i].ingredients[j];
+          var parsedIngredient = ing.parse(thisIngredient);
+          if (req.params.ingredient == parsedIngredient.name ){
+            searchIngredients.push(dbRecipe[i]);
+          }
+        }
+      }
+      res.json(searchIngredients);
+    });
+  });
+
   // Add sequelize code to create a new recipe
   app.post("/api/new", function(req, res) {
-    // debugger;
+    debugger;
   	var recipe = req.body;
   	console.log(recipe);
   	db.recipe.create(req.body)
@@ -84,17 +104,17 @@ module.exports = function(app) {
   });
 
   // PUT route for updating favorite checkbox
-  app.put("/api/change", function(req, res) {
-    db.recipe.update(
-      {favorite: true,
-      },
-      {where: {id: req.body.id}
+  // app.put("/api/change", function(req, res) {
+  //   db.recipe.update(
+  //     {favorite: true,
+  //     },
+  //     {where: {id: req.body.id}
 
-    }).then(function(dbRecipe){
-      res.json(dbRecipe);
-    })
+  //   }).then(function(dbRecipe){
+  //     res.json(dbRecipe);
+  //   })
 
-  });
+  // });
 
 
 

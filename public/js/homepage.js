@@ -11,10 +11,14 @@ $("#search-btn").on("click", function(event) {
   // Save the ingredient they typed into the ingredients-search input
   var ingredientSearched = $("#recipe-ingredients").val().trim();
   // Make an AJAX get request to our api, including the user's recipes in the url
-  $.get("/api/all/ingredients", function(data) {
+  $.get("/api/all/ingredients/" + ingredientSearched, function(data) {
     console.log(data);
+    var recipeArray = [];
+    for (var j = 0; j < data.length; j++) {
+      recipeArray.push(data[j])
+    }
     // Call our renderRecipes function to add our recipes to the page
-    renderRecipes(data);
+    renderRecipes(recipeArray);
   });
   $("#recipe-ingredients").val("");
 });
@@ -26,18 +30,36 @@ $("#search-btn").on("click", function(event) {
 // // When user hits the category-search-btn
 $("#search-btn").on("click", function() {
   // Save the category they typed into the category-search input
-  var categorySearched = $("#recipe-category").val().trim();
+  var categorySearched = $("#recipe-category option:selected").text();
   // Make an AJAX get request to our api
-  $.get("/api/category/" + categorySearched, function(data) {
+  $.get("/api/all/category/" + categorySearched, function(data) {
     // Log the data to the console
     console.log(data);
     // Call our renderRecipes function to add our recipes to the page
     renderRecipes(data);
   });
+
    $("#recipe-category").val("");
 });
 
+
 })
+
+//===================================================================================
+// Get all recipes
+//===================================================================================
+$(function(){
+
+  $("#view-all-btn").on("click", function() {
+
+      $.get("/api/all/", function(data){
+        console.log(data);
+        renderRecipes(data);
+       });
+  });
+
+})
+
 //=================================================================================
 // Data rendering function on the homepage
 //==================================================================================
