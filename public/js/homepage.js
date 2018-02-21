@@ -23,6 +23,7 @@ $("#search-btn").on("click", function(event) {
   $("#recipe-ingredients").val("");
 });
 
+
 //===============================================================================
 // Recipes search based on category
 //===============================================================================
@@ -51,7 +52,6 @@ $("#search-btn").on("click", function() {
 $(function(){
 
   $("#view-all-btn").on("click", function() {
-
       $.get("/api/all/", function(data){
         console.log(data);
         renderRecipes(data);
@@ -109,8 +109,8 @@ function renderRecipes(data) {
         console.log(recipe);
       });
     }
-      
-
-
+     
   }
 }
+
+
