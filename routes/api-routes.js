@@ -104,17 +104,15 @@ module.exports = function(app) {
   });
 
   // PUT route for updating favorite checkbox
-  // app.put("/api/change", function(req, res) {
-  //   db.recipe.update(
-  //     {favorite: true,
-  //     },
-  //     {where: {id: req.body.id}
-
-  //   }).then(function(dbRecipe){
-  //     res.json(dbRecipe);
-  //   })
-
-  // });
+  app.put("/api/all/:id", function(req, res) {
+    db.recipe.update(
+      {favorite: "1"},
+      {where: {id: req.params.id}
+    }).then(function(dbRecipe){
+      res.json(dbRecipe);
+    })
+  
+  });
 
 
 
