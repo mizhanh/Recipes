@@ -149,13 +149,14 @@
                
                 <div class="form-group" style="margin-bottom:50px;">
                   <label for="steps">Category</label>
-            <select style="height:32px;width:150px;" id="recipe-category" name="recipe-category" >
-              <option></option>
-              <option>Breakfast</option>
-              <option>Lunch</option>
-              <option>Dinner</option> 
-            </select>
-          </div>
+                  <!-- <input type="text" class="form-control" id="recipe-category"> -->
+                  <select style="height:32px;width:150px;" id="recipe-category" name="recipe-category" >
+                    <option></option>
+                    <option>Breakfast</option>
+                    <option>Lunch</option>
+                    <option>Dinner</option> 
+                  </select>
+                </div>
 
                 <button type="submit" class="btn btn-success" id="search-btn" style="margin-bottom:20px;">Search by Ingredient/Category</button>
                <button type="submit" class="btn btn-primary" id="view-all-btn" style="margin-left:20px;margin-bottom:20px;">View All Recipes</button>
@@ -171,7 +172,8 @@
                 <h2 id="title" style="font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;font-weight:bold;font-size:16px;text-align: left;margin-bottom:10px;"></h2>
                 <div>
                    <p style="font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;font-size:14px;text-align: left;margin-bottom:5px;"><span id="recipe-ingredients"></span></p>
-                   <p style="font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;font-size:14px;text-align: left;margin-bottom:5px;"><span id="recipe-ingredients"><span id="recipe-category"></span></p>
+                   <p style="font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;font-size:14px;text-align: left;margin-bottom:5px;"><span id="recipe-category"></span></p>
+                   <p style="font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;font-size:14px;text-align: left;margin-bottom:5px;"><span id="view-all"></span></p>
                 </div>
               </div>
             </div>
@@ -281,6 +283,7 @@ $(function () {
 <!-- Link to the documentation for this modal: http://www.ericmmartin.com/projects/simplemodal/  -->
 <script type='text/javascript' src='js/basic.js'></script>
 <script type='text/javascript' src='js/parsley.js'></script>
+<script type='text/javascript' src='js/login.js'></script>
 
 <script type='text/javascript' src='js/homepage.js'></script>
   </body>
