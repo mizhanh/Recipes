@@ -91,6 +91,8 @@ module.exports = function(app) {
   	})
   });
 
+
+
   // Add sequelize code to delete a recipe
   app.post("/api/delete", function(req, res){
     db.recipe.destroy({
@@ -112,6 +114,17 @@ module.exports = function(app) {
       res.json(dbRecipe);
     })
   
+  });
+
+    // Add sequelize code to create a new recipe
+  app.post("/api/new/user", function(req, res) {
+    debugger;
+    var user = req.body;
+    console.log(user);
+    db.user.create(req.body)
+    .then(function(dbUser) {
+      res.json(dbUser);
+    })
   });
 
 
