@@ -133,39 +133,77 @@
       <div class="row">
  
         <div class="col-sm-8">
-   <h1>Browse Recipes</h1>
-          <!-- search panel box -->
+            <h1>Browse Recipes</h1>
+            <!-- search panel box -->
           <div class="panel panel-primary" align="left" style="margin-top:40px;">
             <div class="panel-heading" style="border-color:#c19c62;">
               <h3 class="panel-title"><strong style="color:black">Search for Recipes</strong></h3>
             </div>
             <div class="panel-body">
 
-              <form>
+            <!--Search By Ingredient -->
+                <div class="row">
+                  <div class="col-md-1">
+                    <div class="form-group">
+                      <label for="first-ingredient">Ingredient</label>
+                    </div>
+                  </div>
+                  <div class="col-md-5">
+                      <input type="text" class="form-control" id="recipe-ingredients" style="margin-left:10px;">
+                  </div>
+                  <div class="col-md-4"> 
+                    <div class="form-group">
+                      <button type="submit" class="btn btn-success" id="ingredient-search-btn" style="margin-left:10px;">Search by Ingredient</button>
+                    </div>
+                  </div>
+                </div>
+          
+          <!-- Search By Category -->
+              <div class="row">
+                <div class="col-md-6">             
+                  <div class="form-group">
+                    <label for="steps">Category</label>
+                    <select style="height:35px;width:270px;margin-left:5px;" id="recipe-category" name="recipe-category">
+                      <option></option>
+                      <option>Breakfast</option>
+                      <option>Lunch</option>
+                      <option>Dinner</option> 
+                    </select>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <button type="submit" class="btn btn-success" id="search-btn" style="margin-left:10px;">Search by Category</button>
+                </div>
+              </div>
+
+          <!-- Search By Author -->
+            <div class="row">
+              <div class="col-md-1">
                 <div class="form-group">
-                  <label for="first-ingredient">Main Recipe Ingredient</label>
-                  <input type="text" class="form-control" id="recipe-ingredients">
+                  <label for="steps">Author</label>
                 </div>
-
-               
-                <div class="form-group" style="margin-bottom:50px;">
-                  <label for="steps">Category</label>
-                  <!-- <input type="text" class="form-control" id="recipe-category"> -->
-                  <select style="height:32px;width:150px;" id="recipe-category" name="recipe-category" >
-                    <option></option>
-                    <option>Breakfast</option>
-                    <option>Lunch</option>
-                    <option>Dinner</option> 
-                  </select>
+              </div>
+              <div class="col-md-5">
+                <input type="text" class="form-control" id="recipe-author" style="margin-left:10px;">
+              </div>
+              
+              <div class="col-md-4"> 
+                <div class="form-group">
+                  <button type="submit" class="btn btn-success" id="author-search-btn" style="margin-left:10px;">Search by Author</button>
                 </div>
-
-                <button type="submit" class="btn btn-success" id="search-btn" style="margin-bottom:20px;">Search by Ingredient/Category</button>
-               </form> 
-
-               <button type="submit" class="btn btn-primary" id="view-all-btn" style="margin-bottom:20px;">View All Recipes</button>
+              </div>
               
             </div>
+
+            <!-- Search All Recipes --> 
+              <div class="form-group">
+                <label>Browse All</label>
+                <button type="submit" class="btn btn-primary" id="view-all-btn" style="margin-left:10px;">Search All Recipes</button>
+              </div>
+            </div>
           </div>
+          
+        <!-- Search Result Panel -->
           <div class="panel panel-default" style="border-color:#c19c62;">
             <div class="panel-heading" style="border-color:#c19c62;">
               <h3 class="panel-title"><strong style="color:black">Recipes Search Results</strong></h3>
@@ -177,6 +215,7 @@
                    <p style="font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;font-size:14px;text-align: left;margin-bottom:5px;"><span id="recipe-ingredients"></span></p>
                    <p style="font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;font-size:14px;text-align: left;margin-bottom:5px;"><span id="recipe-category"></span></p>
                    <p style="font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;font-size:14px;text-align: left;margin-bottom:5px;"><span id="view-all"></span></p>
+                   <p style="font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;font-size:14px;text-align: left;margin-bottom:5px;"><span id="recipe-author"></span></p>
                 </div>
               </div>
             </div>
@@ -271,7 +310,7 @@ $(function () {
 });
 </script>
       
-  <!--   </div> -->
+  
 
   </div>
  <footer class="text-muted">

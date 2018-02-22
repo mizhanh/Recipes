@@ -6,7 +6,7 @@ $(function(){
 //===============================================================================
 
 //When user hits the search-btn
-$("#search-btn").on("click", function(event) {
+$("#ingredient-search-btn").on("click", function(event) {
   event.preventDefault();
   // Save the ingredient they typed into the ingredients-search input
   var ingredientSearched = $("#recipe-ingredients").val().trim();
@@ -43,8 +43,27 @@ $("#search-btn").on("click", function() {
    $("#recipe-category").val("");
 });
 
-
 })
+
+//===============================================================================
+// Recipes search based on author
+//===============================================================================
+
+// // When user hits the category-search-btn
+$("#author-search-btn").on("click", function() {
+  // Save the category they typed into the category-search input
+  var authorSearched = $("#recipe-author").val().trim();
+  // Make an AJAX get request to our api
+  $.get("/api/all/author/" + authorSearched, function(data) {
+    // Log the data to the console
+    console.log(data);
+    // Call our renderRecipes function to add our recipes to the page
+    renderRecipes(data);
+  });
+
+   $("#recipe-author").val("");
+});
+
 
 //===================================================================================
 // Get all recipes
@@ -64,7 +83,6 @@ $(function(){
 // Data rendering function on the homepage
 //==================================================================================
 
-
 function renderRecipes(data) {
   if (data.length !== 0) {
     $("#stats").empty();
@@ -81,7 +99,7 @@ function renderRecipes(data) {
       div.append('<p style="font-size:16px">' + '<span style="font-weight:bold; margin-right:5px;">Description: </span>' + data[i].description + '</p>');
       div.append('<p style="font-size:16px">' + '<span style="font-weight:bold; margin-right:5px;">Ingredients: </span>' + data[i].ingredients + '</p>');
       div.append('<p style="font-size:16px">' + '<span style="font-weight:bold; margin-right:5px;">Directions: </span>' + data[i].directions + '</p>');
-      div.append('<p style="font-size:16px">' + '<span style="font-weight:bold; margin-right:5px;">Comment: </span>' + data[i].comment + '</p>');
+      div.append('<p style="font-size:16px">' + '<span style="font-weight:bold; margin-right:5px;">Comments: </span>' + data[i].comments + '</p>');
       div.append('<p style="font-size:16px">' + '<span style="font-weight:bold; margin-right:5px;">Preparation Time: </span>' + data[i].preparation_time + '</p>');
       div.append('<p style="font-size:16px">' + '<span style="font-weight:bold; margin-right:5px;">Servings: </span>' + data[i].servings + '</p>');
       div.append('<p style="font-size:16px">' + '<span style="font-weight:bold; margin-right:5px;">Difficulty: </span>' + data[i].difficulty + '</p>');

@@ -34,6 +34,22 @@ module.exports = function(app) {
     }
   });
 
+
+   // GET route for searching recipes by category
+  app.get("/api/all/author/:author", function(req, res) {
+    if (req.params.author) {
+        db.recipe.findAll({
+          where: {
+            author: req.params.author
+      }
+    }).then(function(dbRecipe) {
+      res.json(dbRecipe);
+      });
+    }
+  });
+
+
+
   // Get all favorite recipes
   app.get("/api/all/favorite", function(req, res) {
       db.recipe.findAll({
