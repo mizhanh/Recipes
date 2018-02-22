@@ -140,30 +140,39 @@
               <h3 class="panel-title"><strong style="color:black">Search for Recipes</strong></h3>
             </div>
             <div class="panel-body">
-              <!-- Form -->
+<!-- Form -->
+<div class="row">
               <form>
-                <div class="form-group">
-                  <label for="first-ingredient">Main Recipe Ingredient</label>
-                  <input type="text" class="form-control" id="recipe-ingredients">
+                <div class="col-sm-4">
+
+                <div class="form-group"> 
+                  <input placeholder="Main Recipe Ingredient" type="text" class="form-control" id="recipe-ingredients" style="margin-bottom:10px;">
+              </div>
+            </div>
+
+             <div class="col-sm-4">
+                  <button type="submit" class="btn btn-success" id="ingredient-search-btn">Search</button>
                 </div>
-               
-                <div class="form-group" style="margin-bottom:50px;">
-                  <label for="steps">Category</label>
+               </form>
+</div>
+               <form>
+                <div class="form-group" style="margin-bottom:50px;margin-top:50px;">
+
                   <!-- <input type="text" class="form-control" id="recipe-category"> -->
-                  <select style="height:32px;width:150px;" id="recipe-category" name="recipe-category" >
-                    <option></option>
+                  <select style="height:32px;width:210px;" id="recipe-category" name="recipe-category" >
+                    <option>Category</option>
                     <option>Breakfast</option>
                     <option>Lunch</option>
                     <option>Dinner</option> 
                   </select>
-                </div>
 
-                <button type="submit" class="btn btn-success" id="search-btn" style="margin-bottom:20px;">Search by Ingredient/Category</button>
-              
+                  <button style="margin-left:30px;" type="submit" class="btn btn-success" id="category-search-btn">Search</button>
+                </div>
               </form>
 
-               <button type="submit" class="btn btn-primary" id="view-all-btn" style="margin-left:20px;margin-bottom:20px;">View All Recipes</button>
-              
+              <form>
+               <button type="submit" class="btn btn-primary" id="view-all-btn" style="margin-bottom:20px;">View All Recipes</button>
+              </form>
             </div>
           </div>
           <div class="panel panel-default" style="border-color:#c19c62;">

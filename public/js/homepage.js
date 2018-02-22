@@ -6,7 +6,7 @@ $(function(){
 //===============================================================================
 
 //When user hits the search-btn
-$("#search-btn").on("click", function(event) {
+$("#ingredient-search-btn").on("click", function(event) {
   event.preventDefault();
   // Save the ingredient they typed into the ingredients-search input
   var ingredientSearched = $("#recipe-ingredients").val().trim();
@@ -29,7 +29,7 @@ $("#search-btn").on("click", function(event) {
 //===============================================================================
 
 // // When user hits the category-search-btn
-$("#search-btn").on("click", function() {
+$("#category-search-btn").on("click", function() {
   // Save the category they typed into the category-search input
   var categorySearched = $("#recipe-category option:selected").text();
   // Make an AJAX get request to our api
