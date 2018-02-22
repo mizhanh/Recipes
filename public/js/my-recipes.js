@@ -14,18 +14,19 @@ $.get("/api/all/favorite", function(data) {
     $("#show-submit-recipe").append(myRecipes);
 
   //   // Now  we add our recipe data to the well we just placed on the page
-    $("#My_Recipe_" + i).append("<h3>" + (i + 1) + ". " + data[i].title + "</h3>");
-    $("#My_Recipe_" + i).append("<h5>Category: " + data[i].category + "</h5>");
-    $("#My_Recipe_" + i).append("<h5>Author: " + data[i].author + "</h5>");
-    $("#My_Recipe_" + i).append('<img src="' + data[i].URL + '">');
-    $("#My_Recipe_" + i).append("<h5>Description: " + data[i].description + "</h5>");
-    $("#My_Recipe_" + i).append("<h5>Ingredients: " + data[i].ingredients + "</h5>");
-    $("#My_Recipe_" + i).append("<h5>Directions: " + data[i].directions + "</h5>");
-    $("#My_Recipe_" + i).append("<h5>Comment: " + data[i].comment + "</h5>");
-    $("#My_Recipe_" + i).append("<h5>Preparation Time: " + data[i].preparation_time + "</h5>");
-    $("#My_Recipe_" + i).append("<h5>Servings: " + data[i].servings + "</h5>");
-    $("#My_Recipe_" + i).append("<h5>Difficulty: " + data[i].difficulty + "</h5>");
-    $("#My_Recipe_" + i).append("<h5>My Favorite: " + data[i].favorite + "</h5>");
+    $("#My_Recipe_" + i).append('<h2 style="font-size:30px; color:#4CAE4C; font-weight:bold; margin-top:0px;">' + data[i].title + '</h2>');
+    $("#My_Recipe_" + i).append('<img src="' + data[i].URL + '" style="width:200px; height:200px;"/>');
+    $("#My_Recipe_" + i).append('<p style="font-size:16px">Category: ' + data[i].category + '</p>');
+    $("#My_Recipe_" + i).append('<p style="font-size:16px">Author: ' + data[i].author + '</p>');
+    
+    $("#My_Recipe_" + i).append('<p style="font-size:16px">Description: ' + data[i].description + '</p>');
+    $("#My_Recipe_" + i).append('<p style="font-size:16px">Ingredients: ' + data[i].ingredients + '</p>');
+    $("#My_Recipe_" + i).append('<p style="font-size:16px">Directions: ' + data[i].directions + '</p>');
+    $("#My_Recipe_" + i).append('<p style="font-size:16px">Comment: ' + data[i].comment + '</p>');
+    $("#My_Recipe_" + i).append('<p style="font-size:16px">Preparation Time: ' + data[i].preparation_time + '</p>');
+    $("#My_Recipe_" + i).append('<p style="font-size:16px">Servings: ' + data[i].servings + '</p>');
+    $("#My_Recipe_" + i).append('<p style="font-size:16px">Difficulty: ' + data[i].difficulty + '</p>');
+    $("#My_Recipe_" + i).append('<p style="font-size:16px">Favorite: ' + data[i].favorite + '</p');
   }
 });
 
