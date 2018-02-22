@@ -17,7 +17,7 @@ $.get("/api/all/favorite", function(data) {
     $("#My_Recipe_" + i).append("<h3>" + (i + 1) + ". " + data[i].title + "</h3>");
     $("#My_Recipe_" + i).append("<h5>Category: " + data[i].category + "</h5>");
     $("#My_Recipe_" + i).append("<h5>Author: " + data[i].author + "</h5>");
-    $("#My_Recipe_" + i).append("<h5>URL: " + data[i].URL + "</h5>");
+    $("#My_Recipe_" + i).append('<img src="' + data[i].URL + '">');
     $("#My_Recipe_" + i).append("<h5>Description: " + data[i].description + "</h5>");
     $("#My_Recipe_" + i).append("<h5>Ingredients: " + data[i].ingredients + "</h5>");
     $("#My_Recipe_" + i).append("<h5>Directions: " + data[i].directions + "</h5>");

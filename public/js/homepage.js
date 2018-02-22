@@ -77,7 +77,7 @@ function renderRecipes(data) {
       div.append("<h2>" + data[i].title + "</h2>");
       div.append("<p>Category: " + data[i].category + "</p>");
       div.append("<p>Author: " + data[i].author + "</p>");
-      div.append("<p>URL: " + data[i].URL + "</p>");
+      div.append('<img src="' + data[i].URL + '">');
       div.append("<p>Description: " + data[i].description + "</p>");
       div.append("<p>Ingredients: " + data[i].ingredients + "</p>");
       div.append("<p>Directions: " + data[i].directions + "</p>");
