@@ -15,7 +15,7 @@ $.get("/api/all/favorite", function(data) {
 
     // Now  we add our recipe data to the well we just placed on the page
     $("#My_Recipe_" + i).append('<h2 style="font-size:30px; color:#4CAE4C; font-weight:bold; margin-top:0px;">' + data[i].title + '</h2>');
-    $("#My_Recipe_" + i).append('<img src="' + data[i].URL + '" style="width:200px; height:200px;"/>');
+    $("#My_Recipe_" + i).append('<img src="' + data[i].URL + '" style="width:200px; height:200px; margin-bottom:20px;"/>');
     $("#My_Recipe_" + i).append('<p style="font-size:16px">' + '<span style="font-weight:bold; margin-right:5px;">Category: </span>' + data[i].category + '</p>');
     $("#My_Recipe_" + i).append('<p style="font-size:16px">' + '<span style="font-weight:bold; margin-right:5px;">Author: </span>' + data[i].author + '</p>');
     

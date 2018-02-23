@@ -93,7 +93,7 @@ function renderRecipes(data) {
       var div = $("<div>");
       
       div.append('<h2 style="font-size:30px; color:#4CAE4C; font-weight:bold">' + data[i].title + '</h2>');
-      div.append('<img src="' + data[i].URL + '" style="width:200px; height:200px;"/>');
+      div.append('<img src="' + data[i].URL + '" style="width:200px; height:200px; margin-bottom:20px;"/>');
       div.append('<p style="font-size:16px">' + '<span style="font-weight:bold; margin-right:5px;">Category: </span>' + data[i].category + '</p>');
       div.append('<p style="font-size:16px">' + '<span style="font-weight:bold; margin-right:5px;">Author: </span>' + data[i].author + '</p>');
       div.append('<p style="font-size:16px">' + '<span style="font-weight:bold; margin-right:5px;">Description: </span>' + data[i].description + '</p>');
