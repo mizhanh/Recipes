@@ -1,14 +1,15 @@
 
 $("#modal-login-submit").on("click", function(event) {
     event.preventDefault();
-    var modalLogin = {
+
+    var logUser = {
         email: $("#modal-email").val().trim(),
         pwd: $("#modal-password").val().trim()
     };
-
+    console.log("log on user: ", logUser.email, " created!");
 
 //routing the user back to the homepage
-$.post('/api/new/user', modalLogin)
+$.post('/api/new/login', logUser)
     .then(function(data) {
         console.log(data)
     });
