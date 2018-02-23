@@ -97,7 +97,12 @@ function renderRecipes(data) {
       div.append('<p style="font-size:16px">' + '<span style="font-weight:bold; margin-right:5px;">Category: </span>' + data[i].category + '</p>');
       div.append('<p style="font-size:16px">' + '<span style="font-weight:bold; margin-right:5px;">Author: </span>' + data[i].author + '</p>');
       div.append('<p style="font-size:16px">' + '<span style="font-weight:bold; margin-right:5px;">Description: </span>' + data[i].description + '</p>');
-      div.append('<p style="font-size:16px">' + '<span style="font-weight:bold; margin-right:5px;">Ingredients: </span>' + data[i].ingredients + '</p>');
+      div.append('<p style="font-size:16px">' + '<span style="font-weight:bold; margin-right:5px;">Ingredients: </span></p>');
+        
+        for (var j = 0; j < data[i].ingredients.length; j++) {
+          div.append('<p style="font-size:16px; margin-left: 25px;">' + data[i].ingredients[j] + '</p>');
+          }
+
       div.append('<p style="font-size:16px">' + '<span style="font-weight:bold; margin-right:5px;">Directions: </span>' + data[i].directions + '</p>');
       div.append('<p style="font-size:16px">' + '<span style="font-weight:bold; margin-right:5px;">Comments: </span>' + data[i].comments + '</p>');
       div.append('<p style="font-size:16px">' + '<span style="font-weight:bold; margin-right:5px;">Preparation Time: </span>' + data[i].preparation_time + '</p>');

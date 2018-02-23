@@ -20,7 +20,13 @@ $.get("/api/all/favorite", function(data) {
     $("#My_Recipe_" + i).append('<p style="font-size:16px">' + '<span style="font-weight:bold; margin-right:5px;">Author: </span>' + data[i].author + '</p>');
     
     $("#My_Recipe_" + i).append('<p style="font-size:16px">' + '<span style="font-weight:bold; margin-right:5px;">Description: </span>' + data[i].description + '</p>');
-    $("#My_Recipe_" + i).append('<p style="font-size:16px">' + '<span style="font-weight:bold; margin-right:5px;">Ingredients: </span>' + data[i].ingredients + '</p>');
+
+    $("#My_Recipe_" + i).append('<p style="font-size:16px">' + '<span style="font-weight:bold; margin-right:5px;">Ingredients: </span></p>');
+
+    for (var j = 0; j < data[i].ingredients.length; j++) {
+        $("#My_Recipe_" + i).append('<p style="font-size:16px; margin-left: 25px;">' + data[i].ingredients[j] + '</p>');
+    }
+    
     $("#My_Recipe_" + i).append('<p style="font-size:16px">' + '<span style="font-weight:bold; margin-right:5px;">Directions: </span>' + data[i].directions + '</p>');
     $("#My_Recipe_" + i).append('<p style="font-size:16px">' + '<span style="font-weight:bold; margin-right:5px;">Comments: </span>' + data[i].comments + '</p>');
     $("#My_Recipe_" + i).append('<p style="font-size:16px">' + '<span style="font-weight:bold; margin-right:5px;">Preparation Time: </span>' + data[i].preparation_time + '</p>');
