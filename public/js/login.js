@@ -13,6 +13,8 @@ $.post('/api/new/login', logUser)
     .then(function(data) {
         console.log(data)
     });
+    redirectToPage();
+     alert("Welcome back " + newUser.email + " to Sweet Basil!");
 })
 
 // Get the modal
@@ -25,9 +27,8 @@ window.onclick = function(event) {
     }
 }
 
-$(function () {
-    function redirectToPage() {
-        var url = window.location.href;
-        window.location(url + "/index.html");
+
+//Function to redirect to the main homepage
+function redirectToPage() {
+    window.location.href = "index.html";
     }
-});
