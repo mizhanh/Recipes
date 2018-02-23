@@ -6,13 +6,5 @@ module.exports = function(sequelize, DataTypes) {
     email: DataTypes.STRING,
     pwd: DataTypes.STRING
   });
-
-  // User.associate = function(models) {
-  //   // Associating User with Recipes
-  //   User.hasMany(models.Recipe, {
-  //     onDelete: "cascade"
-  //   });
-  // };
-
   return User;
 };

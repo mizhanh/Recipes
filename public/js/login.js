@@ -9,7 +9,7 @@ $("#modal-login-submit").on("click", function(event) {
     console.log("log on user: ", logUser.email, " created!");
 
 //routing the user back to the homepage
-$.post('/api/new/login', logUser)
+$.post('/signin', logUser)
     .then(function(data) {
         console.log(data)
     });

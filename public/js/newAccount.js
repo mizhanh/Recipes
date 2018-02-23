@@ -10,7 +10,7 @@ $("#modal-create-account-submit").on("click", function(event) {
     console.log("New user: ", newUser.email, " created!");
 
     //routing the user back to the homepage
-    $.post('/api/new/user', newUser)
+    $.post('/signup', newUser)
         .then(function(data) {
             console.log(data);
         });
