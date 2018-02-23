@@ -2,7 +2,6 @@
 
 body{
     background-image: url("../img/background.png");
-
 }
 .footer {
     width:100%
@@ -13,7 +12,6 @@ body{
     margin-top:20px;
     font-size:12px;
 }
-
 .footer {
 	width:100%
 	height:60px;
@@ -23,7 +21,6 @@ body{
 	margin-top:20px;
 	font-size:12px;
 }
-
 .shrink {
     width: 200px;
     height: 200px;
@@ -50,7 +47,6 @@ h2 {
 	padding-bottom:5px;
 
 }
-
 h5 {
     font-family: 'Open Sans', sans-serif;
     font-size:15px;
@@ -59,7 +55,6 @@ h5 {
     padding-bottom:5px;
 
 }
-
 .jumbotron {
     margin-top:20px;
     background-color:#ffffff;
@@ -72,9 +67,21 @@ h5 {
     background-color: #c19c62 !important;
     color:#000000;
 }
-
 .panel-primary {
     border-color: #c19c62 !important;
+}
+
+.parsley-errors-list li.parsley-required {
+    background: green;
+    padding: 10px;
+    color: #fff;
+    border-radius: 10;
+}
+.parsley-errors-list li.parsley-type {
+    background: green;
+    padding: 10px;
+    color: #fff;
+    border-radius: 10;
 }
 .text-center {
     color:#000000;
