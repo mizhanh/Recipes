@@ -35,7 +35,7 @@ module.exports = function(app) {
   });
 
 
-   // GET route for searching recipes by category
+   // GET route for searching recipes by author
   app.get("/api/all/author/:author", function(req, res) {
     if (req.params.author) {
         db.recipe.findAll({
@@ -132,7 +132,7 @@ module.exports = function(app) {
   
   });
 
-    // Add sequelize code to create a new recipe
+    // Add sequelize code to create a new user
   app.post("/api/new/user", function(req, res) {
     debugger;
     var user = req.body;
@@ -143,7 +143,13 @@ module.exports = function(app) {
     })
   });
 
-
+  // GET route for all users
+  app.get("/api/all/user", function(req, res) {
+    db.user.findAll({})
+    .then(function(dbUser) {
+      res.json(dbUser);
+    });
+  });
 
 
 };

@@ -6,14 +6,20 @@ $("#modal-create-account-submit").on("click", function(event) {
         email: $("#modal-create-account-email").val().trim(),
         pwd: $("#modal-create-account-password").val().trim()
     };
+
     console.log("New user: ", newUser.email, " created!");
 
-//routing the user back to the homepage
-$.post('/api/new/user', newUser)
-    .then(function(data) {
-        console.log(data)
-    });
+    //routing the user back to the homepage
+    $.post('/api/new/user', newUser)
+        .then(function(data) {
+            console.log(data);
+        });
+
+     redirectToPage();
+     alert("Welcome " + newUser.email + " to Sweet Basil!");
+    
 })
+
 
 // Get the modal
 var modal = document.getElementById("modal-create-account-submit");
@@ -25,9 +31,7 @@ window.onclick = function(event) {
     }
 }
 
-$(function () {
-    function redirectToPage() {
-        var url = window.location.href;
-        window.location(url + "/index.html");
+//Function to redirect to the main homepage
+function redirectToPage() {
+    window.location.href = "index.html";
     }
-});
