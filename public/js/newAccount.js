@@ -1,21 +1,22 @@
 
-$("#modal-login-submit").on("click", function(event) {
+$("#modal-create-account-submit").on("click", function(event) {
     event.preventDefault();
-    var modalLogin = {
-        email: $("#modal-email").val().trim(),
-        pwd: $("#modal-password").val().trim()
-    };
 
+    var newUser = {
+        email: $("#modal-create-account-email").val().trim(),
+        pwd: $("#modal-create-account-password").val().trim()
+    };
+    console.log("New user: ", newUser.email, " created!");
 
 //routing the user back to the homepage
-$.post('/api/new/user', modalLogin)
+$.post('/api/new/user', newUser)
     .then(function(data) {
         console.log(data)
     });
 })
 
 // Get the modal
-var modal = document.getElementById("modal-login-submit");
+var modal = document.getElementById("modal-create-account-submit");
 
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event) {

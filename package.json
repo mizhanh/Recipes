@@ -27,6 +27,7 @@
     "handlebars-helper-css": "^0.1.0",
     "ingredientparser": "0.0.3",
     "method-override": "^2.3.10",
+    "morgan": "^1.9.0",
     "mysql2": "^1.5.2",
     "recipe-ingredient-parser": "^1.5.3",
     "sequelize": "^4.33.2",

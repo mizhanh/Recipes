@@ -4,10 +4,12 @@ var methodOverride = require("method-override");
 
 var PORT = process.env.PORT || 8080;
 var app = express();
+var morgan = require('morgan');
 
 var db = require("./models");
 
 // Sets up the Express app to handle data parsing
+app.use(morgan('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.text());
