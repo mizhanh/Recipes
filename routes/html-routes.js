@@ -17,13 +17,13 @@ module.exports = function(app, passport) {
     res.sendFile(path.join(__dirname, "../public/index.html"));
   });
 
-  app.get("/my-recipes", isLoggedIn, function(req, res) {
+  app.get("/my-recipes", function(req, res) {
     res.sendFile(path.join(__dirname, "../public/my-recipes.html"));
   });
 
   // blog route loads blog.html
-  app.get("/submit-recipes", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/submit-recipes.html"));
+  app.get("/submit-recipe", function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/submit-recipe.html"));
   });
 };
 
@@ -34,4 +34,5 @@ function isLoggedIn(req, res, next) {
         return next();
     // if they aren't redirect them to the home page
     res.redirect('/');
+    // res.status('401').send({error:'Invalid Token'});
 }

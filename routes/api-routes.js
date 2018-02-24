@@ -51,7 +51,7 @@ module.exports = function(app, passport) {
 
 
   // Get all favorite recipes
-  app.get("/api/all/favorite", isLoggedIn, function(req, res) {
+  app.get("/api/all/favorite", isLoggedIn,function(req, res) {
       db.recipe.findAll({
           where: {
             favorite: "1"
@@ -157,6 +157,7 @@ module.exports = function(app, passport) {
     if (req.isAuthenticated())
         return next();
     // if they aren't redirect them to the home page
-    res.redirect('/');
+    // res.redirect('/');
+      res.send(500,'showAlert') 
   }
 };
