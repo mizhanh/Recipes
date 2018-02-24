@@ -51,16 +51,31 @@ module.exports = function(app, passport) {
 
 
   // Get all favorite recipes
-  app.get("/api/all/favorite", isLoggedIn,function(req, res) {
+  app.get("/api/all/favorite", isLoggedIn, function(req, res) {
+    var thisUser = req.user.email;
+    db.favorite.findAll({
+        where: {
+          email: thisUser
+        }
+    }).then(function(dbFavorite) {
+      var favArray = [];
+      for (var i = 0; i < dbFavorite.length; i++) {
+          console.log("dbFavorite: ", dbFavorite[i].dataValues.recipeId);
+          favArray.push(dbFavorite[i].dataValues.recipeId);
+        }
       db.recipe.findAll({
-          where: {
-            favorite: "1"
-      }
-    }).then(function(dbRecipe) {
-      res.json(dbRecipe);
+        where: {
+          id: favArray
+        }
+      }).then(function(dbRecipe) {
+        res.json(dbRecipe);
+        });
       })
+      // res.json(dbRecipe);
+    }
+  );
     
-  });
+
 
 
   // GET route for getting ingredients from all recipes
@@ -122,12 +137,14 @@ module.exports = function(app, passport) {
   });
 
   // PUT route for updating favorite checkbox
-  app.put("/api/all/:id", function(req, res) {
-    db.recipe.update(
-      {favorite: "1"},
-      {where: {id: req.params.id}
-    }).then(function(dbRecipe){
-      res.json(dbRecipe);
+  app.post("/favorite/:id/", isLoggedIn, function(req, res) {
+    var newFavorite = {
+      email: req.user.email,
+      recipeId: req.params.id
+    };
+    console.log("email: ", newFavorite.email, " recipeId: ", newFavorite.recipeId);
+    db.favorite.create(newFavorite).then(function(dbFavorite){
+      res.json(dbFavorite);
     })
   
   });
@@ -141,14 +158,6 @@ module.exports = function(app, passport) {
     .then(function(dbUser) {
       res.json(dbUser);
     })
-  });
-
-  // GET route for all users
-  app.get("/api/all/user", function(req, res) {
-    db.user.findAll({})
-    .then(function(dbUser) {
-      res.json(dbUser);
-    });
   });
 
   // route middleware to make sure a user is logged in
