@@ -51,7 +51,7 @@ module.exports = function(app, passport) {
 
 
   // Get all favorite recipes
-  app.get("/api/all/favorite", function(req, res) {
+  app.get("/api/all/favorite", isLoggedIn, function(req, res) {
       db.recipe.findAll({
           where: {
             favorite: "1"
