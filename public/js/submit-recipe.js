@@ -42,9 +42,6 @@ $("#submit-recipe").on("click", function(event) {
     favorite: $("input[name='favorite']:checked").val()
   };
 
-  // To check if newRecipe object work 
-    // console.log(newRecipe);
-
   // Send an AJAX POST-request with jQuery
   $.post("/api/new", newRecipe)
     // On success, run the following code
