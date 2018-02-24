@@ -123,9 +123,9 @@ function renderRecipes(data) {
     $(".addFav").click(function(){
         var id = $(this).attr("data-id");
          $.ajax({
-            method: "PUT",
-            url: "/api/all/" + id,
-          }).then(getRecipe); 
+            method: "POST",
+            url: "/favorite/" + id,
+          }).then(console.log("posted: ", id)); 
     });
 
     function getRecipe(){
