@@ -39,7 +39,8 @@ $("#submit-recipe").on("click", function(event) {
     preparation_time: $("#preparation_time").val().trim(),
     servings: $("#servings").val().trim(),
     difficulty: $("input[name='difficulty']:checked").val(),
-    favorite: $("input[name='favorite']:checked").val()
+    favorite: 0
+    // favorite: $("input[name='favorite']:checked").val()
   };
 
   // Send an AJAX POST-request with jQuery
@@ -61,7 +62,7 @@ $("#submit-recipe").on("click", function(event) {
   $("#comments").val("");
   $("#preparation_time").val("");
   $("#servings").val("");
-  $("#favorite").val("");
+  // $("#favorite").val("");
 });
 
 
